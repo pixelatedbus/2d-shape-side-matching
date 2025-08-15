@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: hakim    # Choose a username
+      POSTGRES_PASSWORD: hakim123  # Choose a strong password
+      POSTGRES_DB: image_database     # Choose a database name
+    ports:
+      - "5432:5432"
