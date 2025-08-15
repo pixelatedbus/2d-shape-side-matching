@@ -5,10 +5,6 @@ from sqlalchemy.orm import declarative_base
 Base = declarative_base()
 
 class Image(Base):
-    """
-    SQLAlchemy model for storing shape metadata.
-    """
-
     __tablename__ = "images"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)

@@ -27,10 +27,6 @@ async def search_for_match(
     file: UploadFile = File(...),
     threshold: float = Form(...)
 ):
-    """
-    This is the main endpoint for the application. It accepts an image,
-    processes it, compares it against the database, and returns the best matches.
-    """
     start_time = time.time()
 
     # 1. Save the uploaded file temporarily to get a file path
@@ -46,7 +42,6 @@ async def search_for_match(
         query_side_profiles = generate_side_profiles(str(temp_file_path))
         query_shape = Shape(side_profiles=query_side_profiles, id=-1)
 
-        print("Fetching candidate shapes from the database...")
         candidate_shapes = db_helper.get_all_images(db)
         if not candidate_shapes:
             raise HTTPException(status_code=404, detail="No shapes found in the database to compare against.")
@@ -75,6 +70,5 @@ async def search_for_match(
         )
 
     finally:
-        # 7. Clean up the temporary file
         if temp_file_path.exists():
             temp_file_path.unlink()

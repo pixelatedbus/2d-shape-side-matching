@@ -1,5 +1,6 @@
 import numpy as np
 #judol-detector-468402
+#gcloud builds submit --tag gcr.io/judol-detector-468402/shape-matcher-backend ./backend
 class SideProfile:
     def __init__(self, profile: np.ndarray, angle: int = 0):
         self.profile = profile
