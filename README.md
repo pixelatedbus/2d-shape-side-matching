@@ -61,5 +61,5 @@ The frontend will be accessible at `http://localhost:3000`.
 
 ### Author
 
-- **Name**: Luthfi Hakim Yusra
+- **Name**: Lutfi Hakim Yusra
 - **NIM**: 13523084
